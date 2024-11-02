@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
@@ -7,6 +7,9 @@ if [ ! -f "/vol/proxy/ssl-dhparams.pem" ]; then
   echo "Generating dhparams.pem"
   openssl dhparam -out /vol/proxy/ssl-dhparams.pem 2048
 fi
+
+export host=\$host
+export request_uri=\$request_uri
 
 echo "Check for fullchain.pem"
 if [ ! -f "/etc/letsencrypt/live/${DOMAIN}/fullchain.pem" ]; then
