@@ -23,7 +23,7 @@ services:
     environment:
       - DOMAIN=${DOMAIN}
   
-  cerbot:
+  certbot:
     build:
       context: ./docker/certbot
     command: echo "Skipping..."
@@ -39,4 +39,4 @@ services:
 volumes:
   certbot-web:
   proxy-dhparams:
-  cerbot-certs:
+  certbot-certs:
