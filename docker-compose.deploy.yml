@@ -29,7 +29,7 @@ services:
     command: echo "Skipping..."
     environment:
       - DOMAIN=${DOMAIN}
-      - EMAIL=${AMCE_DEFAULT_EMAIL}
+      - EMAIL=${ACME_DEFAULT_EMAIL}
     volumes:
       - certbot-web:/vol/www
       - certbot-certs:/etc/letsencrypt/
