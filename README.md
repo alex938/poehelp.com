@@ -1,6 +1,17 @@
 # poehelp.com
 Path of Exile Help Website
 
+# Setup:
+```
+docker-compose -f docker-compose.deploy.yml run --rm certbot /opt/certify-init.sh
+docker-compose -f docker-compose.deploy.yml down
+docker-compose -f docker-compose.deploy.yml up
+```
+# Make changes - don't forget to build:
+```
+docker-compose -f docker-compose.deploy.yml build
+```
+---
 https://github.com/certbot/certbot/blob/main/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf
 ```
 # This file contains important security parameters. If you modify this file
