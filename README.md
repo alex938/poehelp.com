@@ -11,6 +11,14 @@ docker-compose -f docker-compose.deploy.yml up
 ```
 docker-compose -f docker-compose.deploy.yml build
 ```
+
+# Don't forget to change these in settings.py if starting new project!
+```
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'setmeinproduction')
+DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', 0)))
+ALLOWED_HOSTS = [] if DEBUG else os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
+```
+
 ---
 https://github.com/certbot/certbot/blob/main/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf
 ```
